@@ -1,0 +1,20 @@
+{
+  "name": "weather-atlas",
+  "private": true,
+  "version": "1.0.0",
+  "description": "3D interactive weather app: React + Vite + react-three-fiber frontend, Express + Open-Meteo backend",
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w client",
+    "test": "npm run test -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
